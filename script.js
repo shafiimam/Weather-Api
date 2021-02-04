@@ -8,24 +8,14 @@ const getWeatherData = city => {
     const url = `${apiUrl}?q=${city}&units=metric&appid=${apiKey}`;
     fetch(url)
         .then(response => response.json())
-        //.then(data => updateWeather(data))
         .then(data => updateWeather(data))
 
 }
 
-const getWeatherData2 = city => {
-    const url = `${apiUrl}?q=${city}&units=metric&appid=${apiKey}`;
-    fetch(url)
-        .then(response => response.json())
-        //.then(data => updateWeather(data))
-        .then(data => console.log(data))
-
-}
 
 function searchCity() {
     const searchCity = document.getElementById('search-city').value;
     getWeatherData(searchCity);
-    getWeatherData2(searchCity);
     searchCity.innerText = '';
 }
 
